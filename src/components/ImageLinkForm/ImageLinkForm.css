@@ -2,5 +2,14 @@
     display: flex;
     align-items: center;
     background: linear-gradient(89deg, rgba(211, 140, 197, 0.63) 0%, rgba(32, 207, 226, 0.664) 100%);
-    width: 400px;
+    width: 50%;
+   
+}
+.wi {
+    width: 70%;
+}
+.wb {
+    font-size: 1.1em;
+
+    width: 30%;
 }

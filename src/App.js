@@ -9,7 +9,6 @@ import Register from './components/Register/Register';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
-import Tilt from 'react-tilt';
 
 //You must add your own API key here from Clarifai.
 
@@ -27,8 +26,18 @@ const particlesOptions = {
 }
 
 class App extends Component {
- 
-
+  constructor() {
+    super();
+    this.state = {
+      input: '',
+    }
+  }
+onInputChange =  (event) =>{
+  console.log(event.target.value);
+}
+onBtnChange = (event) => {
+  console.log('click');
+}
   render() {
     return (
       <div className="App">
@@ -37,7 +46,8 @@ class App extends Component {
         />
         <Navigation  />
         <Logo /> 
-        <ImageLinkForm/>
+        <ImageLinkForm onInputChange={this.onInputChange}
+                       onBtnChange={this.onBtnChange}/>
         {/*  <Rank />
         
         <FaceRecognition />*/}
