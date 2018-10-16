@@ -24,6 +24,9 @@ const particlesOptions = {
     }
   }
 }
+const app = new Clarifai.App({
+  apiKey: '1ab8b4d945174635ab6d419d5680af6a'
+ });
 
 class App extends Component {
   constructor() {
@@ -37,6 +40,17 @@ onInputChange =  (event) =>{
 }
 onBtnChange = (event) => {
   console.log('click');
+  app.models.predict(app.apiKey, "https://samples.clarifai.com/face-det.jpg").then(
+
+      function(response) {
+          console.log(response);
+      },
+
+      function(err) {
+        // there was an error
+      }
+
+  );
 }
   render() {
     return (
